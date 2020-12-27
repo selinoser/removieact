@@ -25,7 +25,7 @@ const Header = () => {
                                     <div className="collapse navbar-collapse" id="navbarNav">
                                         <div className="header__line"></div>
                                         <ul class="navbar-nav header__nav">
-                                            <li className="header__nav-item nav-item"><NavLink exact to="/populer" className="header__nav-link">POPÜLER</NavLink></li>
+                                            <li className="header__nav-item nav-item"><NavLink exact to="/populer"  className="header__nav-link">POPÜLER</NavLink></li>
                                             <li className="header__nav-item nav-item"><NavLink exact to="/top-rated" className="header__nav-link">EN ÇOK BEĞENİLENLER</NavLink></li>
                                             <li className="header__nav-item nav-item"><NavLink exact to="/upcoming" className="header__nav-link">GELECEK FİLMLER</NavLink></li>
                                             <li className="header__nav-item nav-item"><NavLink exact to="/contact" className="header__nav-link">İLETİŞİM</NavLink></li>

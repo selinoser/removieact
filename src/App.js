@@ -21,7 +21,7 @@ function App() {
       <div>
         <main>
           <Header></Header>
-          <BrowserRouter forceRefresh={true}>
+          <BrowserRouter forceRefresh={true} basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/" exact ><Homepage></Homepage></Route>
                 <Route path="/populer" exact ><Populer></Populer></Route>
