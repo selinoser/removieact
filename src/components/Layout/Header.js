@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, NavLink, HashRouter } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 
 const txtColor = {
     color : "#ff55a5"
@@ -7,7 +7,7 @@ const txtColor = {
 
 const Header = () => {
     return (
-        <HashRouter forceRefresh={true} basename={process.env.PUBLIC_URL}>
+        <BrowserRouter forceRefresh={true}>
             <header className="header">
                 <div className="header__wrap">
                     <div className="container">
@@ -37,7 +37,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

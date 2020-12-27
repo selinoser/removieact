@@ -8,7 +8,7 @@ import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
 import Populer from './components/Movies/Populer';
 
-import { BrowserRouter, Route, Switch, HashRouter} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MovieDetail from './components/Movies/MovieDetail';
 import TopRated from './components/Movies/TopRated';
 import Contact from './components/Contact';
@@ -21,7 +21,7 @@ function App() {
       <div>
         <main>
           <Header></Header>
-          <HashRouter forceRefresh={true} basename={process.env.PUBLIC_URL}>
+          <BrowserRouter forceRefresh={true}>
             <Switch>
                 <Route path="/" exact ><Homepage></Homepage></Route>
                 <Route path="/populer" exact ><Populer></Populer></Route>
@@ -31,7 +31,7 @@ function App() {
                 <Route path="/movie-detail/:id" exact component={MovieDetail}></Route>
                 <Route component={Error}></Route>
             </Switch>
-            </HashRouter>
+            </BrowserRouter>
           </main>
           <Footer></Footer>
       </div>
