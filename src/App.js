@@ -23,12 +23,12 @@ function App() {
           <Header></Header>
           <BrowserRouter forceRefresh={true} basename={process.env.PUBLIC_URL}>
             <Switch>
-                <Route path={process.env.PUBLIC_URL + '/'} exact ><Homepage></Homepage></Route>
-                <Route path={process.env.PUBLIC_URL + '/populer'} exact ><Populer></Populer></Route>
-                <Route path={process.env.PUBLIC_URL + '/top-rated'} exact ><TopRated></TopRated></Route>
-                <Route path={process.env.PUBLIC_URL + '/upcoming'} exact ><Upcoming></Upcoming></Route>
-                <Route path={process.env.PUBLIC_URL + '/contact'} exact ><Contact></Contact></Route>
-                <Route path={process.env.PUBLIC_URL + '/movie-detail/:id'} exact component={MovieDetail}></Route>
+                <Route path="/" exact ><Homepage></Homepage></Route>
+                <Route path="/populer" exact ><Populer></Populer></Route>
+                <Route path="/top-rated" exact ><TopRated></TopRated></Route>
+                <Route path="/upcoming" exact ><Upcoming></Upcoming></Route>
+                <Route path="/contact" exact ><Contact></Contact></Route>
+                <Route path="/movie-detail/:id" exact component={MovieDetail}></Route>
                 <Route component={Error}></Route>
             </Switch>
             </BrowserRouter>
