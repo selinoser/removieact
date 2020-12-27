@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink, HashRouter } from 'react-router-dom';
 
 const txtColor = {
     color : "#ff55a5"
