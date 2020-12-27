@@ -7,7 +7,7 @@ const txtColor = {
 
 const Header = () => {
     return (
-        <BrowserRouter forceRefresh={true}>
+        <HashRouter forceRefresh={true}>
             <header className="header">
                 <div className="header__wrap">
                     <div className="container">
@@ -37,7 +37,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
