@@ -7,7 +7,7 @@ const txtColor = {
 
 const Header = () => {
     return (
-        <HashRouter forceRefresh={true}>
+        <HashRouter forceRefresh={true} basename={process.env.PUBLIC_URL}>
             <header className="header">
                 <div className="header__wrap">
                     <div className="container">
