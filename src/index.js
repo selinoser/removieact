@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
@@ -22,13 +22,13 @@ const store = createStore(rootReducer, initalState, composeWithDevTools(applyMid
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
   <React.StrictMode>
     <Provider store={store}>
     <App />
     </Provider>
   </React.StrictMode>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 
