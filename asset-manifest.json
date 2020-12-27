@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/removieact/static/css/main.2f266487.chunk.css",
-    "main.js": "/removieact/static/js/main.35a0f3d4.chunk.js",
-    "main.js.map": "/removieact/static/js/main.35a0f3d4.chunk.js.map",
+    "main.js": "/removieact/static/js/main.95b5b480.chunk.js",
+    "main.js.map": "/removieact/static/js/main.95b5b480.chunk.js.map",
     "runtime-main.js": "/removieact/static/js/runtime-main.630b6676.js",
     "runtime-main.js.map": "/removieact/static/js/runtime-main.630b6676.js.map",
     "static/js/2.011eb82f.chunk.js": "/removieact/static/js/2.011eb82f.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.630b6676.js",
     "static/js/2.011eb82f.chunk.js",
     "static/css/main.2f266487.chunk.css",
-    "static/js/main.35a0f3d4.chunk.js"
+    "static/js/main.95b5b480.chunk.js"
   ]
 }
