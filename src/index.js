@@ -22,12 +22,12 @@ const store = createStore(rootReducer, initalState, composeWithDevTools(applyMid
 
 
 ReactDOM.render(
-  <HashRouter basename={process.env.PUBLIC_URL}>
-  <React.StrictMode>
-    <Provider store={store}>
-    <App />
-    </Provider>
-  </React.StrictMode>
+  <HashRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+      <App />
+      </Provider>
+    </React.StrictMode>
   </HashRouter>,
   document.getElementById('root')
 );
