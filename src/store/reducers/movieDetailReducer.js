@@ -1,18 +1,16 @@
-import { GET_MOVIE_BY_ID} from '../types'
+import ActionTypes from '../actionsTypes';
 
 const initialState = {
-    movieById : null,
-    loading: true
+    movieById: null
 }
 
 const movieDetailReducer = (state = initialState, action) => {
-    switch(action.type){
-        case GET_MOVIE_BY_ID:
-        return {
-            ...state,
-            movieById: action.payload,
-            loading: false
-        }
+    switch (action.type) {
+        case ActionTypes.movies.GET_MOVIE_BY_ID:
+            return {
+                ...state,
+                movieById: action.payload
+            }
         default: return state
     }
 }

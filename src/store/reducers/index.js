@@ -1,8 +1,13 @@
-import { combineReducers } from "redux";
-import movieReducer from "./movieReducer";
-import movieDetailReducer from "./movieDetailReducer";
+import { combineReducers } from 'redux';
 
-export default combineReducers({
-  populerMovies: movieReducer,
-  movieById: movieDetailReducer
-});
+import movieDetailReducer from './movieDetailReducer';
+import movieReducer from './movieReducer';
+
+const reducers = combineReducers(
+  {
+    movies: movieReducer,
+    movieById: movieDetailReducer
+  }
+)
+
+export default reducers;

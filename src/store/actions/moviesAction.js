@@ -1,72 +1,84 @@
-import { GET_POPULER_MOVIES, GET_GENRE_IDS, GET_MOVIE_TOP_RATED, GET_SEARCH_MOVIE, GET_UPCOMING_MOVIE } from "../types";
-import axios from "axios";
+import axios from 'axios';
 
-const api = "https://api.themoviedb.org/3/";
-const apiKey = "27359f6ab80a87d204461de63158f3bb";
+import ActionTypes from '../actionsTypes';
 
+const api = process.env.REACT_APP_API;
+const apiKey = process.env.REACT_APP_API_KEY;
 
-export function getPopulerMovies (page) {
-  return function(dispatch) {
-     axios.get(`${api}movie/popular?api_key=${apiKey}&language=tr-TR`, {
-      params: {
-        page: page
-      }
-    })
-    .then(response => {
-      dispatch({
-        type: GET_POPULER_MOVIES,
-        payload: response.data
-      });
-    })
-  };
-}
-
-export const getGenreIds = () => async dispatch => {
-  await axios.get(`${api}genre/movie/list?api_key=${apiKey}&language=tr-TR`)
-  .then(response => {
-    dispatch({
-      type: GET_GENRE_IDS,
-      payload: response.data.genres
-    });
-  })
+const getPopulerMovies = (page) => {
+  return async function (dispatch) {
+    try {
+      await axios.get(`${api}movie/popular?api_key=${apiKey}&language=tr-TR`,
+        {
+          params: {
+            page: page
+          }
+        })
+        .then(response => {
+          dispatch({ type: ActionTypes.movies.GET_POPULER_MOVIES, payload: response.data });
+        })
+    } catch (err) {
+    }
+  }
 };
 
-export function getMovieTopRated() {
-  return function(dispatch) {
-     axios.get(`${api}movie/top_rated?api_key=${apiKey}&language=tr-TR`)
-    .then(response => {
-      dispatch({
-        type: GET_MOVIE_TOP_RATED,
-        payload: response.data
-      });
-    })
+const getGenreIds = () => {
+  return async function (dispatch) {
+    await axios.get(`${api}genre/movie/list?api_key=${apiKey}&language=tr-TR`)
+      .then(response => {
+        dispatch({ type: ActionTypes.movies.GET_GENRE_IDS, payload: response.data.genres });
+      })
+  }
+}
+
+const getMovieTopRated = () => {
+  return async function (dispatch) {
+    await axios.get(`${api}movie/top_rated?api_key=${apiKey}&language=tr-TR`)
+      .then(response => {
+        dispatch({ type: ActionTypes.movies.GET_MOVIE_TOP_RATED, payload: response.data });
+      })
   };
 }
 
-export function getSearchMovie(query, page) {
-  return function(dispatch) {
-     axios.get(`${api}search/movie?api_key=${apiKey}&query=${query}&page=${page}&language=tr-TR`, {
-      params: {
-        query: query,
-        page: page
-      }
-    })
-    .then(response => {
-      dispatch({
-        type: GET_SEARCH_MOVIE,
-        payload: response.data
-      });
-    })
+const getSearchMovie = (query, page) => {
+  console.log(query)
+  return async function (dispatch) {
+    try {
+
+      await axios.get(`${api}search/movie?api_key=${apiKey}&page=${page}&language=tr-TR&query=${query}`, {
+        params: {
+          page
+        }
+      })
+        .then(response => {
+          dispatch({
+            type: ActionTypes.movies.GET_SEARCH_MOVIE,
+            payload: response.data
+          });
+        })
+    } catch (err) {
+
+    }
   };
 }
 
 
-export const getUpComingMovie = () => async dispatch => {
+const getUpComingMovie = () => async dispatch => {
   axios.get(`${api}movie/upcoming?api_key=${apiKey}&language=tr-TR&region=tr`)
-  .then(response => {
-    dispatch({
-      type: GET_UPCOMING_MOVIE,
-      payload: response.data
-    });
-  })
+    .then(response => {
+      dispatch({
+        type: ActionTypes.movies.GET_UPCOMING_MOVIE,
+        payload: response.data
+      });
+    })
 };
+
+const moviesAction = {
+  getPopulerMovies,
+  getGenreIds,
+  getMovieTopRated,
+  getSearchMovie,
+  getUpComingMovie
+}
+
+export default moviesAction;
