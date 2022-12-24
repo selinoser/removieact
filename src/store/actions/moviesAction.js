@@ -41,7 +41,6 @@ const getMovieTopRated = () => {
 }
 
 const getSearchMovie = (query, page) => {
-  console.log(query)
   return async function (dispatch) {
     try {
 

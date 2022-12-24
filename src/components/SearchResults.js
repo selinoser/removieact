@@ -1,5 +1,8 @@
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import React from 'react';
 import { MdStar } from 'react-icons/md';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 
 const SearchList = ({ searchList, imgUrl, getMovieGenreName, onPageChange }) => {
@@ -17,7 +20,11 @@ const SearchList = ({ searchList, imgUrl, getMovieGenreName, onPageChange }) => 
                                     <div className="col-6 col-sm-4 col-lg-3 col-xl-3" key={item.id}>
                                         <div className="card">
                                             <div className="card__cover">
-                                                <img src={poster} alt={item.title} />
+                                                <LazyLoadImage
+                                                    effect='blur'
+                                                    alt={item.title}
+                                                    src={poster}>
+                                                </LazyLoadImage>
                                                 <Link to={'/movie-detail/' + item.id} className="card__play">  <i className="icon ion-ios-play"></i> </Link>
                                             </div>
                                             <div className="card__content">

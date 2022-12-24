@@ -31,7 +31,6 @@ const Trending = () => {
         genres = genres.slice(0, -2);
         return genres
     }
-    console.log(states.movieTopRated)
     if (states.movieTopRated !== null) {
         return (
             <div>

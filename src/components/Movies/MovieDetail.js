@@ -1,6 +1,9 @@
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import moment from 'moment';
 import React, { useEffect } from 'react';
 import { MdStar } from 'react-icons/md';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
@@ -33,7 +36,11 @@ const MovieDetail = () => {
                                 <div className="row">
                                     <div className="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
                                         <div className="card__cover">
-                                            <img src={posters} alt={movieDetail.title} />
+                                            <LazyLoadImage
+                                                effect='blur'
+                                                alt={movieDetail.title}
+                                                src={posters}>
+                                            </LazyLoadImage>
                                         </div>
                                     </div>
                                     <div className="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-9">

@@ -1,5 +1,8 @@
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import moment from 'moment';
 import React, { useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -59,8 +62,11 @@ const Upcoming = () => {
                                                 <div className="row">
                                                     <div className="col-12 col-sm-4 col-md-2">
                                                         <div className="card__cover">
-                                                            <img src={poster} alt={item.title} />
-
+                                                            <LazyLoadImage
+                                                                effect='blur'
+                                                                alt={item.title}
+                                                                src={poster}>
+                                                            </LazyLoadImage>
                                                         </div>
                                                     </div>
 

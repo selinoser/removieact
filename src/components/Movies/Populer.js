@@ -41,7 +41,6 @@ const Populer = () => {
         dispatch(actions.moviesAction.getPopulerMovies(pageNumber))
     }
 
-    console.log(states.populerMovies)
     if (states.populerMovies.results !== undefined) {
         return (
             <div>
